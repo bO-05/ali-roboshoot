@@ -408,6 +408,9 @@ export class MainMenu extends Scene
     shutdown() {
         console.log('MainMenu shutdown called.');
 
+        // --- Stop the background music ---
+        this.sound.stopByKey('bgm');
+
         // --- Clean up keyboard listeners ---
         this.input.keyboard.off('keydown-M', this.toggleMusicMute, this);
         this.input.keyboard.off('keydown-F', this.toggleSfxMute, this);

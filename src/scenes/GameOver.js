@@ -28,8 +28,8 @@ export class GameOver extends Scene
         const centerX = this.cameras.main.centerX;
         const centerY = this.cameras.main.centerY;
 
-        // Add the new background image - Scaled down and moved up even more
-        this.add.image(centerX, centerY - 225, 'game_over_bg').setScale(0.5).setDepth(0); // Reduced scale, moved higher, explicit depth 0
+        // --- Use Main Menu Background ---
+        this.add.image(centerX, centerY, 'menu_background').setDepth(0);
 
         // Game Over Text (REMOVED - Assuming it's part of the background image)
         /*
