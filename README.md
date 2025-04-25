@@ -1,6 +1,6 @@
 # Alibaba Robot Shooter Game
 
-A web-based robot shooter game built with Phaser 3. Play as a robot and defend against waves of enemy robots!
+A web-based robot shooter game built with Phaser 3. Play as a combat red car and defend against waves of enemy robots!
 
 ![screenshot](public/screenshot.png)
 
@@ -10,7 +10,7 @@ A fast-paced, top-down arcade shooter built with Phaser 3 and Vite. Take command
 
 ## Game Overview
 
-**Ali Roboshoot** is a browser-based action game where you control a heavily armed combat vehicle fighting against relentless robot adversaries (Scarabs, Hornets, Spiders). Use quick reflexes, tactical movement, powerful weapons (including RPGs), and strategic objective captures to survive and achieve a high score!
+**Ali Roboshoot** is a browser-based action game where you control a heavily armed combat vehicle fighting against relentless robot adversaries (Scarabs, Hornets, Spiders, & Orange Samurai Robot). Use quick reflexes, tactical movement, powerful weapons (including RPGs), and strategic objective captures to survive and achieve a high score!
 
 ## Features
 
