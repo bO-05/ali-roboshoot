@@ -22,14 +22,13 @@ export class GameOver extends Scene
 
     create ()
     {
-        // Remove old background color
-        // this.cameras.main.setBackgroundColor(0xff0000);
+        this.add.image(512, 384, 'background');
 
         const centerX = this.cameras.main.centerX;
         const centerY = this.cameras.main.centerY;
 
-        // --- Use Main Menu Background ---
-        this.add.image(centerX, centerY, 'menu_background').setDepth(0);
+        // Add the new background image - Scaled down and moved up even more
+        this.add.image(centerX, centerY - 225, 'game_over_bg').setScale(0.5).setDepth(0); // Reduced scale, moved higher, explicit depth 0
 
         // Game Over Text (REMOVED - Assuming it's part of the background image)
         /*
@@ -261,6 +260,7 @@ export class GameOver extends Scene
     goToMainMenu() {
         console.log("GameOver screen: Returning to Main Menu via M key...");
         this.cleanupListeners(); // Clean up before starting new scene
+        this.sound.stopByKey('bgm');
         this.scene.stop('GameOver'); // Stop this scene
         this.scene.start('MainMenu'); // Go to Main Menu
     }
@@ -279,6 +279,8 @@ export class GameOver extends Scene
             this.bgmPlayTimer.remove(false); // Pass false to prevent the callback from firing on removal
             console.log("Removed delayed BGM timer.");
         }
+        // --- Stop BGM if it was playing ---
+        this.sound.stopByKey('bgm');
         this.cleanupListeners();
     }
 

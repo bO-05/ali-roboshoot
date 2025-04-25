@@ -1975,9 +1975,12 @@ export class Game extends Scene
             console.error("[Transition] Error during cleanup:", error);
             // Don't clear the timeout on error - let it trigger as a fallback
         }
-        
+
+        // --- Stop BGM before leaving scene --- <<<< ADDED
+        this.sound.stopByKey('bgm');
+
         // Now stop and start scenes
-        this.scene.stop('Game'); 
+        this.scene.stop('Game');
         this.scene.start('MainMenu');
     }
 
@@ -2052,8 +2055,11 @@ export class Game extends Scene
         this.physics.velocityFromRotation(angle, knockbackForce, player.body.velocity);
 
         // Optionally, robot might react (e.g., brief stun or pushback)
-        robot.body.velocity.x *= 0.5;
-        robot.body.velocity.y *= 0.5;
+        // --- ADDED BODY CHECK --- >
+        if (robot.body) {
+            robot.body.velocity.x *= 0.5;
+            robot.body.velocity.y *= 0.5;
+        }
 
         // Check for game over - FORCE IT
         if (player.health <= 0) {
